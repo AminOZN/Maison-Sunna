@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Sunna — Souvenirs inspirés de Médine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --vert: #006741;
+    --vert-fonce: #004d30;
+    --vert-clair: #1a8555;
+    --or: #c9a84c;
+    --or-clair: #e8c96a;
+    --or-pale: #f5e8c0;
+    --blanc: #f9f6f0;
+    --noir: #1a1a1a;
+    --gris: #6b6b6b;
+    --gris-clair: #f0ede6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--blanc);
+    color: var(--noir);
+    overflow-x: hidden;
+  }
+
+  /* ─── BARRE PROMO ─── */
+  .promo-bar {
+    background: var(--vert);
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+  .promo-bar strong { font-weight: 700; color: var(--or-clair); }
+
+  /* ─── HEADER ─── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid #e8e0d0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+  }
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 46px;
+    height: 46px;
+    background: var(--vert);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-icon .arabic {
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+  }
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  .logo-text span:first-child {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--vert);
+    text-transform: uppercase;
+  }
+  .logo-text span:last-child {
+    font-family: 'Cinzel', serif;
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: var(--vert-fonce);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  nav { display: flex; gap: 36px; }
+  nav a {
+    text-decoration: none;
+    color: var(--noir);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color .2s;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+  }
+  nav a:hover { color: var(--vert); border-bottom-color: var(--or); }
+  .header-actions { display: flex; gap: 20px; align-items: center; }
+  .btn-cart {
+    background: var(--vert);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background .2s;
+    position: relative;
+  }
+  .btn-cart:hover { background: var(--vert-clair); }
+  .cart-count {
+    position: absolute;
+    top: -6px; right: -6px;
+    background: var(--or);
+    color: var(--noir);
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    background: var(--vert-fonce);
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: .06;
+    background-image:
+      repeating-linear-gradient(45deg, #c9a84c 0, #c9a84c 1px, transparent 0, transparent 50%),
+      repeating-linear-gradient(-45deg, #c9a84c 0, #c9a84c 1px, transparent 0, transparent 50%);
+    background-size: 30px 30px;
+  }
+  .hero-orb {
+    position: absolute;
+    right: -100px; top: 50%;
+    transform: translateY(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 80px 80px 80px 80px;
+    max-width: 680px;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--or-clair);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: '';
+    display: block;
+    width: 32px; height: 1px;
+    background: var(--or-clair);
+  }
+  .hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(40px, 5vw, 72px);
+    color: #fff;
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 28px;
+    letter-spacing: 2px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--or-clair);
+  }
+  .hero p {
+    color: rgba(255,255,255,0.7);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+  .hero-arabic {
+    font-size: 42px;
+    color: rgba(201,168,76,0.3);
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: right;
+    direction: rtl;
+    pointer-events: none;
+  }
+  .btn-hero {
+    display: inline-block;
+    background: var(--or);
+    color: var(--noir);
+    text-decoration: none;
+    padding: 16px 44px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 2px;
+    transition: background .2s, transform .2s;
+    margin-right: 16px;
+  }
+  .btn-hero:hover { background: var(--or-clair); transform: translateY(-2px); }
+  .btn-hero-outline {
+    display: inline-block;
+    background: transparent;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 44px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 2px;
+    transition: border-color .2s, color .2s;
+  }
+  .btn-hero-outline:hover { border-color: var(--or-clair); color: var(--or-clair); }
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .hero-stat .number {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    color: var(--or-clair);
+    display: block;
+  }
+  .hero-stat .label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ─── SECTION TITRES ─── */
+  .section-header {
+    text-align: center;
+    padding: 80px 40px 48px;
+  }
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--or);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-eyebrow::before, .section-eyebrow::after {
+    content: '';
+    display: block;
+    width: 24px; height: 1px;
+    background: var(--or);
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 400;
+    color: var(--vert-fonce);
+    letter-spacing: 2px;
+  }
+  .section-subtitle {
+    margin-top: 14px;
+    color: var(--gris);
+    font-size: 15px;
+    font-weight: 300;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+  }
+
+  /* ─── CATÉGORIES ─── */
+  .categories {
+    padding: 0 48px 80px;
+  }
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .cat-card {
+    background: var(--vert-fonce);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform .3s;
+    text-decoration: none;
+  }
+  .cat-card:hover { transform: translateY(-6px); }
+  .cat-card:hover .cat-overlay { opacity: 0.5; }
+  .cat-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,50,25,0.92) 0%, rgba(0,50,25,0.3) 50%, transparent 100%);
+    transition: opacity .3s;
+  }
+  .cat-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: .08;
+    background-image: repeating-linear-gradient(60deg, #c9a84c 0, #c9a84c 1px, transparent 0, transparent 40%),
+      repeating-linear-gradient(-60deg, #c9a84c 0, #c9a84c 1px, transparent 0, transparent 40%);
+    background-size: 20px 20px;
+  }
+  .cat-emoji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    font-size: 64px;
+    z-index: 2;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+  }
+  .cat-info {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+  }
+  .cat-info h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .cat-info p {
+    font-size: 12px;
+    color: var(--or-clair);
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+  .cat-arrow {
+    display: inline-block;
+    margin-top: 10px;
+    width: 32px; height: 1px;
+    background: var(--or);
+    position: relative;
+    transition: width .3s;
+  }
+  .cat-arrow::after {
+    content: '';
+    position: absolute;
+    right: 0; top: -3px;
+    width: 7px; height: 7px;
+    border-top: 1px solid var(--or);
+    border-right: 1px solid var(--or);
+    transform: rotate(45deg);
+  }
+  .cat-card:hover .cat-arrow { width: 48px; }
+
+  /* ─── PRODUITS ─── */
+  .products-section { padding: 0 48px 80px; }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .product-card {
+    background: #fff;
+    border: 1px solid #e8e0d0;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow .3s, transform .3s;
+    cursor: pointer;
+  }
+  .product-card:hover {
+    box-shadow: 0 12px 40px rgba(0,103,65,0.12);
+    transform: translateY(-4px);
+  }
+  .product-img {
+    aspect-ratio: 1;
+    background: var(--gris-clair);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-img .bg-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: .04;
+    background-image:
+      repeating-linear-gradient(45deg, #006741 0, #006741 1px, transparent 0, transparent 30%);
+    background-size: 15px 15px;
+  }
+  .product-badge {
+    position: absolute;
+    top: 14px; left: 14px;
+    background: var(--vert);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  .product-badge.new { background: var(--or); color: var(--noir); }
+  .product-badge.promo { background: #c0392b; }
+  .product-info { padding: 20px; }
+  .product-category {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--or);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .product-name {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    color: var(--vert-fonce);
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .product-desc {
+    font-size: 13px;
+    color: var(--gris);
+    line-height: 1.7;
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .product-price {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    color: var(--vert);
+    font-weight: 600;
+  }
+  .product-price-old {
+    font-size: 13px;
+    color: var(--gris);
+    text-decoration: line-through;
+    margin-left: 6px;
+  }
+  .btn-add {
+    background: var(--vert);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background .2s;
+    font-weight: 700;
+  }
+  .btn-add:hover { background: var(--vert-clair); }
+
+  /* ─── BANNIÈRE LIVRAISON ─── */
+  .delivery-banner {
+    background: var(--gris-clair);
+    padding: 40px 48px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid #e0d8cc;
+    border-bottom: 1px solid #e0d8cc;
+  }
+  .delivery-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+    border-right: 1px solid #e0d8cc;
+  }
+  .delivery-item:first-child { padding-left: 0; }
+  .delivery-item:last-child { border-right: none; }
+  .delivery-icon {
+    width: 44px; height: 44px;
+    background: var(--vert);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .delivery-text h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .delivery-text p {
+    font-size: 12px;
+    color: var(--gris);
+    margin-top: 2px;
+    font-weight: 300;
+  }
+
+  /* ─── VALEURS ─── */
+  .values-section {
+    padding: 80px 48px;
+    background: var(--vert-fonce);
+    position: relative;
+    overflow: hidden;
+  }
+  .values-bg {
+    position: absolute;
+    inset: 0;
+    opacity: .04;
+    background-image:
+      repeating-linear-gradient(30deg, #c9a84c 0, #c9a84c 1px, transparent 0, transparent 40px);
+    background-size: 46px 46px;
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .value-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .value-num {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    color: rgba(201,168,76,0.2);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 60px;
+  }
+  .value-text h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    color: var(--or-clair);
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .value-text p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ─── PANIER DRAWER ─── */
+  .cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+  }
+  .cart-overlay.open { opacity: 1; pointer-events: all; }
+  .cart-drawer {
+    position: fixed;
+    right: -480px;
+    top: 0; bottom: 0;
+    width: 420px;
+    background: #fff;
+    z-index: 201;
+    transition: right .35s cubic-bezier(.4,0,.2,1);
+    display: flex;
+    flex-direction: column;
+  }
+  .cart-drawer.open { right: 0; }
+  .cart-header {
+    padding: 28px;
+    border-bottom: 1px solid #e8e0d0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cart-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    color: var(--vert-fonce);
+    letter-spacing: 2px;
+  }
+  .cart-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--gris);
+    line-height: 1;
+  }
+  .cart-items { flex: 1; overflow-y: auto; padding: 20px 28px; }
+  .cart-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gris);
+  }
+  .cart-empty .empty-icon { font-size: 48px; margin-bottom: 16px; }
+  .cart-empty p { font-size: 14px; }
+  .cart-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0ede6;
+  }
+  .cart-item-img {
+    width: 70px; height: 70px;
+    background: var(--gris-clair);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+  .cart-item-info { flex: 1; }
+  .cart-item-name {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: var(--vert-fonce);
+    margin-bottom: 4px;
+  }
+  .cart-item-price { font-size: 14px; color: var(--vert); font-weight: 700; }
+  .cart-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .qty-btn {
+    width: 26px; height: 26px;
+    background: var(--gris-clair);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .qty-num { font-size: 13px; font-weight: 700; min-width: 20px; text-align: center; }
+  .cart-item-remove {
+    background: none;
+    border: none;
+    color: var(--gris);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px;
+    align-self: flex-start;
+  }
+  .cart-footer {
+    padding: 24px 28px;
+    border-top: 1px solid #e8e0d0;
+  }
+  .cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .cart-total-label {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: var(--vert-fonce);
+  }
+  .cart-total-price {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    color: var(--vert);
+    font-weight: 600;
+  }
+  .btn-checkout {
+    width: 100%;
+    background: var(--vert);
+    color: #fff;
+    border: none;
+    padding: 16px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background .2s;
+    margin-bottom: 12px;
+  }
+  .btn-checkout:hover { background: var(--vert-clair); }
+  .cart-note {
+    text-align: center;
+    font-size: 11px;
+    color: var(--gris);
+    letter-spacing: 1px;
+  }
+
+  /* ─── MODAL COMMANDE ─── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 300;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: #fff;
+    width: 100%;
+    max-width: 560px;
+    border-radius: 4px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal-header {
+    background: var(--vert-fonce);
+    padding: 28px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .modal-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+  .modal-close {
+    background: none; border: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 24px; cursor: pointer;
+  }
+  .modal-body { padding: 32px; }
+  .order-summary {
+    background: var(--gris-clair);
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 28px;
+  }
+  .order-summary h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--vert-fonce);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .order-summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 5px 0;
+    color: var(--gris);
+  }
+  .order-summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #e0d8cc;
+  }
+  .form-group { margin-bottom: 20px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    border: 1px solid #e0d8cc;
+    border-radius: 2px;
+    padding: 12px 14px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: var(--noir);
+    background: #fff;
+    transition: border-color .2s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--vert); }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .form-section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    color: var(--vert-fonce);
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e8e0d0;
+    text-transform: uppercase;
+  }
+  .payment-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .payment-option {
+    border: 1.5px solid #e0d8cc;
+    border-radius: 4px;
+    padding: 14px;
+    cursor: pointer;
+    transition: border-color .2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .payment-option.selected { border-color: var(--vert); background: rgba(0,103,65,.04); }
+  .payment-option .icon { font-size: 24px; }
+  .payment-option-text { font-size: 13px; font-weight: 700; color: var(--vert-fonce); }
+  .payment-option-sub { font-size: 11px; color: var(--gris); }
+  .btn-submit-order {
+    width: 100%;
+    background: var(--or);
+    color: var(--noir);
+    border: none;
+    padding: 18px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background .2s;
+  }
+  .btn-submit-order:hover { background: var(--or-clair); }
+
+  /* ─── CONFIRMATION ─── */
+  .confirm-screen { display: none; }
+  .confirm-screen.show {
+    display: block;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .confirm-icon { font-size: 64px; margin-bottom: 20px; }
+  .confirm-screen h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    color: var(--vert-fonce);
+    margin-bottom: 12px;
+  }
+  .confirm-screen p { color: var(--gris); font-size: 14px; line-height: 1.7; }
+  .confirm-screen .order-ref {
+    display: inline-block;
+    background: var(--gris-clair);
+    padding: 10px 24px;
+    border-radius: 2px;
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    color: var(--vert);
+    font-weight: 600;
+    margin: 16px 0;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--vert-fonce);
+    color: rgba(255,255,255,0.7);
+    padding: 64px 48px 32px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  .footer-brand .brand-name {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .footer-brand p {
+    font-size: 13px;
+    line-height: 1.9;
+    font-weight: 300;
+    max-width: 280px;
+  }
+  .footer-brand .footer-arabic {
+    font-size: 28px;
+    color: rgba(201,168,76,0.4);
+    margin-top: 20px;
+    direction: rtl;
+    display: block;
+  }
+  .footer-col h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: var(--or-clair);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 10px;
+    transition: color .2s;
+    font-weight: 300;
+  }
+  .footer-col a:hover { color: var(--or-clair); }
+  .footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .social-btn {
+    width: 38px; height: 38px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 14px;
+    transition: border-color .2s, color .2s;
+  }
+  .social-btn:hover { border-color: var(--or); color: var(--or-clair); }
+  .footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+  .footer-siret { font-size: 11px; color: rgba(255,255,255,0.25); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp .7s ease forwards;
+  }
+  .fade-up-1 { animation-delay: .1s; }
+  .fade-up-2 { animation-delay: .25s; }
+  .fade-up-3 { animation-delay: .4s; }
+  .fade-up-4 { animation-delay: .55s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    header { padding: 0 20px; }
+    nav { display: none; }
+    .hero-content { padding: 60px 24px; }
+    .hero-arabic { display: none; }
+    .categories { padding: 0 20px 60px; }
+    .categories-grid { grid-template-columns: 1fr 1fr; }
+    .products-section { padding: 0 20px 60px; }
+    .products-grid { grid-template-columns: 1fr 1fr; }
+    .delivery-banner { grid-template-columns: 1fr 1fr; padding: 32px 20px; gap: 24px; }
+    .delivery-item { border-right: none; }
+    .values-grid { grid-template-columns: 1fr; gap: 40px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer { padding: 48px 20px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BARRE PROMO -->
+<div class="promo-bar">
+  Livraison <strong>offerte</strong> dès 50€ d'achat &nbsp;|&nbsp; Expédition sous 48h &nbsp;|&nbsp;
+  <strong>Mondial Relay · Colissimo · Chronopost</strong>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo-wrap">
+    <div class="logo-icon">
+      <span class="arabic">ﺱ</span>
+    </div>
+    <div class="logo-text">
+      <span>Maison</span>
+      <span>Sunna</span>
+    </div>
+  </a>
+
+  <nav>
+    <a href="#produits">Boutique</a>
+    <a href="#categories">Catégories</a>
+    <a href="#livraison">Livraison</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="header-actions">
+    <button class="btn-cart" onclick="toggleCart()">
+      🛍 Panier
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-orb"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow fade-up fade-up-1">Inspiré de Médine</div>
+    <h1 class="fade-up fade-up-2">Des souvenirs<br>qui <em>portent</em><br>du sens</h1>
+    <p class="fade-up fade-up-3">
+      Chaque article de Maison Sunna est sélectionné avec soin pour vous rapprocher 
+      de l'essentiel. Chapelets, encens, vêtements et objets du quotidien inspirés 
+      de la tradition islamique.
+    </p>
+    <div class="fade-up fade-up-4">
+      <a href="#produits" class="btn-hero">Découvrir la boutique</a>
+      <a href="#categories" class="btn-hero-outline">Nos catégories</a>
+    </div>
+    <div class="hero-stats fade-up fade-up-4">
+      <div class="hero-stat">
+        <span class="number">121</span>
+        <span class="label">Avis vérifiés</span>
+      </div>
+      <div class="hero-stat">
+        <span class="number">Pro</span>
+        <span class="label">Vendeur certifié</span>
+      </div>
+      <div class="hero-stat">
+        <span class="number">48h</span>
+        <span class="label">Expédition</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-arabic">
+    بسم الله<br>الرحمن الرحيم
+  </div>
+</section>
+
+<!-- CATÉGORIES -->
+<section id="categories">
+  <div class="section-header">
+    <div class="section-eyebrow">Explorer</div>
+    <h2 class="section-title">Nos Catégories</h2>
+    <p class="section-subtitle">Des articles soigneusement choisis pour enrichir votre quotidien spirituel</p>
+  </div>
+  <div class="categories" style="padding-top:0;">
+    <div class="categories-grid">
+      <a href="#produits" class="cat-card" onclick="filterCat('chapelets')">
+        <div class="cat-overlay"></div>
+        <div class="cat-pattern"></div>
+        <div class="cat-emoji">📿</div>
+        <div class="cat-info">
+          <h3>Chapelets</h3>
+          <p>Misbaha & Tasbih</p>
+          <div class="cat-arrow"></div>
+        </div>
+      </a>
+      <a href="#produits" class="cat-card" onclick="filterCat('encens')">
+        <div class="cat-overlay"></div>
+        <div class="cat-pattern"></div>
+        <div class="cat-emoji">🕌</div>
+        <div class="cat-info">
+          <h3>Encens & Oud</h3>
+          <p>Parfums d'Orient</p>
+          <div class="cat-arrow"></div>
+        </div>
+      </a>
+      <a href="#produits" class="cat-card" onclick="filterCat('vetements')">
+        <div class="cat-overlay"></div>
+        <div class="cat-pattern"></div>
+        <div class="cat-emoji">👘</div>
+        <div class="cat-info">
+          <h3>Vêtements</h3>
+          <p>Qamis & Abaya</p>
+          <div class="cat-arrow"></div>
+        </div>
+      </a>
+      <a href="#produits" class="cat-card" onclick="filterCat('livres')">
+        <div class="cat-overlay"></div>
+        <div class="cat-pattern"></div>
+        <div class="cat-emoji">📖</div>
+        <div class="cat-info">
+          <h3>Livres & Dua</h3>
+          <p>Corans & Invocations</p>
+          <div class="cat-arrow"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUITS -->
+<section id="produits">
+  <div class="section-header">
+    <div class="section-eyebrow">Boutique</div>
+    <h2 class="section-title">Nos Produits</h2>
+    <p class="section-subtitle">Chaque article est une invitation à se souvenir de l'essentiel</p>
+  </div>
+  <div class="products-section" style="padding-top:0;">
+    <div class="products-grid" id="productsGrid">
+      <!-- Les produits sont générés par JS -->
+    </div>
+  </div>
+</section>
+
+<!-- LIVRAISON -->
+<div id="livraison" class="delivery-banner">
+  <div class="delivery-item">
+    <div class="delivery-icon">📦</div>
+    <div class="delivery-text">
+      <h4>Mondial Relay</h4>
+      <p>Livraison en point relais sous 3–5j</p>
+    </div>
+  </div>
+  <div class="delivery-item">
+    <div class="delivery-icon">🚀</div>
+    <div class="delivery-text">
+      <h4>Chronopost</h4>
+      <p>Livraison express sous 24–48h</p>
+    </div>
+  </div>
+  <div class="delivery-item">
+    <div class="delivery-icon">📮</div>
+    <div class="delivery-text">
+      <h4>Colissimo</h4>
+      <p>Suivi en temps réel, partout en France</p>
+    </div>
+  </div>
+  <div class="delivery-item">
+    <div class="delivery-icon">✅</div>
+    <div class="delivery-text">
+      <h4>Paiement sécurisé</h4>
+      <p>PayPal, virement & Lydia</p>
+    </div>
+  </div>
+</div>
+
+<!-- VALEURS -->
+<section class="values-section">
+  <div class="values-bg"></div>
+  <div class="section-header" style="background:transparent; padding-bottom:60px;">
+    <div class="section-eyebrow" style="color: var(--or-clair);">Notre engagement</div>
+    <h2 class="section-title" style="color: #fff;">Pourquoi Maison Sunna ?</h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-item">
+      <div class="value-num">01</div>
+      <div class="value-text">
+        <h3>Authenticité</h3>
+        <p>Chaque produit est soigneusement sélectionné pour sa qualité et son authenticité, directement inspiré des traditions islamiques les plus nobles.</p>
+      </div>
+    </div>
+    <div class="value-item">
+      <div class="value-num">02</div>
+      <div class="value-text">
+        <h3>Confiance</h3>
+        <p>Vendeur Pro certifié sur Vinted, 121 avis vérifiés et un numéro SIRET déposé. La transparence est au cœur de notre démarche.</p>
+      </div>
+    </div>
+    <div class="value-item">
+      <div class="value-num">03</div>
+      <div class="value-text">
+        <h3>Expédition rapide</h3>
+        <p>Toutes les commandes sont expédiées sous 48h via Mondial Relay, Colissimo ou Chronopost selon votre préférence.</p>
+      </div>
+    </div>
+    <div class="value-item">
+      <div class="value-num">04</div>
+      <div class="value-text">
+        <h3>Communauté</h3>
+        <p>Plus qu'une boutique, une communauté. Rejoignez-nous sur Instagram et Snapchat @maison_sunna pour vivre l'expérience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="brand-name">MAISON SUNNA</span>
+      <p>Un souvenir inspiré de Médine 🇸🇦<br>
+      Chapelets, encens, vêtements et objets du quotidien<br>
+      sélectionnés avec soin pour vous rapprocher de l'essentiel.</p>
+      <span class="footer-arabic">بسم الله</span>
+      <div class="footer-social">
+        <a class="social-btn" href="https://www.instagram.com/maison_sunna/" target="_blank">In</a>
+        <a class="social-btn" href="https://www.vinted.fr/member/165707848" target="_blank">Vi</a>
+        <a class="social-btn" href="mailto:sunna.maison@gmail.com">✉</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Boutique</h4>
+      <a href="#produits">Tous les produits</a>
+      <a href="#" onclick="filterCat('chapelets')">Chapelets</a>
+      <a href="#" onclick="filterCat('encens')">Encens & Oud</a>
+      <a href="#" onclick="filterCat('vetements')">Vêtements</a>
+      <a href="#" onclick="filterCat('livres')">Livres & Dua</a>
+    </div>
+    <div class="footer-col">
+      <h4>Informations</h4>
+      <a href="#livraison">Livraison</a>
+      <a href="#">Conditions générales</a>
+      <a href="#">Politique de retour</a>
+      <a href="#">Mentions légales</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:sunna.maison@gmail.com">sunna.maison@gmail.com</a>
+      <a href="https://www.instagram.com/maison_sunna/">@maison_sunna</a>
+      <a href="https://www.vinted.fr/member/165707848">Profil Vinted</a>
+      <p style="font-size: 12px; margin-top: 16px; color: rgba(255,255,255,0.35);">
+        Saint-Priest, France
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Maison Sunna. Tous droits réservés.</span>
+    <span class="footer-siret">SIRET 89777845200010</span>
+  </div>
+</footer>
+
+<!-- CART OVERLAY + DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h2>Votre Panier</h2>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <div class="empty-icon">🛍</div>
+      <p>Votre panier est vide</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-price" id="cartTotal">0,00 €</span>
+    </div>
+    <button class="btn-checkout" onclick="openOrder()">Passer commande</button>
+    <p class="cart-note">🔒 Paiement 100% sécurisé</p>
+  </div>
+</div>
+
+<!-- MODAL COMMANDE -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div id="orderForm">
+      <div class="modal-header">
+        <h2>Passer Commande</h2>
+        <button class="modal-close" onclick="closeOrder()">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Résumé -->
+        <div class="order-summary">
+          <h3>Récapitulatif</h3>
+          <div id="orderSummaryItems"></div>
+          <div class="order-summary-total">
+            <span>Total</span>
+            <span id="orderTotal">0,00 €</span>
+          </div>
+        </div>
+        <!-- Infos personnelles -->
+        <div class="form-section-title">Informations personnelles</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Prénom</label>
+            <input type="text" id="firstName" placeholder="Ahmed">
+          </div>
+          <div class="form-group">
+            <label>Nom</label>
+            <input type="text" id="lastName" placeholder="Dupont">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email" placeholder="ahmed@email.com">
+        </div>
+        <div class="form-group">
+          <label>Téléphone</label>
+          <input type="tel" id="phone" placeholder="06 12 34 56 78">
+        </div>
+        <!-- Livraison -->
+        <div class="form-section-title" style="margin-top:28px;">Adresse de livraison</div>
+        <div class="form-group">
+          <label>Adresse</label>
+          <input type="text" id="address" placeholder="12 rue de la Paix">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Code postal</label>
+            <input type="text" id="zip" placeholder="69000">
+          </div>
+          <div class="form-group">
+            <label>Ville</label>
+            <input type="text" id="city" placeholder="Lyon">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Mode de livraison</label>
+          <select id="shipping">
+            <option value="relay">Mondial Relay — 3,99 € (3 à 5j)</option>
+            <option value="colissimo">Colissimo — 5,50 € (2 à 3j)</option>
+            <option value="chronopost">Chronopost — 9,90 € (24–48h)</option>
+          </select>
+        </div>
+        <!-- Paiement -->
+        <div class="form-section-title" style="margin-top:28px;">Mode de paiement</div>
+        <div class="payment-options">
+          <div class="payment-option selected" onclick="selectPayment(this, 'paypal')">
+            <span class="icon">💳</span>
+            <div>
+              <div class="payment-option-text">PayPal</div>
+              <div class="payment-option-sub">Paiement sécurisé</div>
+            </div>
+          </div>
+          <div class="payment-option" onclick="selectPayment(this, 'virement')">
+            <span class="icon">🏦</span>
+            <div>
+              <div class="payment-option-text">Virement</div>
+              <div class="payment-option-sub">IBAN fourni par email</div>
+            </div>
+          </div>
+          <div class="payment-option" onclick="selectPayment(this, 'lydia')">
+            <span class="icon">📱</span>
+            <div>
+              <div class="payment-option-text">Lydia / Sumeria</div>
+              <div class="payment-option-sub">Paiement instantané</div>
+            </div>
+          </div>
+          <div class="payment-option" onclick="selectPayment(this, 'cash')">
+            <span class="icon">💵</span>
+            <div>
+              <div class="payment-option-text">Espèces</div>
+              <div class="payment-option-sub">Retrait en main propre</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Message (facultatif)</label>
+          <textarea id="message" placeholder="Informations supplémentaires, demande spéciale..."></textarea>
+        </div>
+        <button class="btn-submit-order" onclick="submitOrder()">
+          ✦ Confirmer ma commande
+        </button>
+      </div>
+    </div>
+    <!-- CONFIRMATION -->
+    <div class="confirm-screen" id="confirmScreen">
+      <div class="confirm-icon">🤲</div>
+      <h3>Jazāk Allāhu Khayran !</h3>
+      <p>Votre commande a bien été reçue.<br>
+      Vous allez recevoir un email de confirmation à l'adresse indiquée.</p>
+      <div class="order-ref" id="orderRef"></div>
+      <p style="margin-top: 16px;">
+        Nous expédions votre colis sous 48h.<br>
+        Pour toute question : <strong>sunna.maison@gmail.com</strong>
+      </p>
+      <button onclick="closeOrder()" style="
+        margin-top: 32px;
+        background: var(--vert);
+        color: #fff;
+        border: none;
+        padding: 14px 40px;
+        font-family: 'Lato', sans-serif;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-radius: 2px;
+      ">Retour à la boutique</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── DONNÉES PRODUITS ───
+const PRODUCTS = [
+  {
+    id: 1,
+    name: "Chapelet Misbaha Nacre",
+    category: "chapelets",
+    catLabel: "Chapelets",
+    desc: "33 perles en véritable nacre blanche, fil soie vert. Tissage artisanal, livré en pochette velours.",
+    price: 18.90,
+    emoji: "📿",
+    badge: "bestseller",
+    badgeText: "Best-seller"
+  },
+  {
+    id: 2,
+    name: "Encens Oud Al-Madinah",
+    category: "encens",
+    catLabel: "Encens & Oud",
+    desc: "Mélange authentique de bakhour et oud importé. Parfum envoûtant, 50g.",
+    price: 24.50,
+    emoji: "🪔",
+    badge: "new",
+    badgeText: "Nouveau"
+  },
+  {
+    id: 3,
+    name: "Qamis Premium Blanc",
+    category: "vetements",
+    catLabel: "Vêtements",
+    desc: "Qamis en coton égyptien, coupe droite, boutons nacre. Disponible du S au 3XL.",
+    price: 42.00,
+    emoji: "👘",
+    badge: null,
+    badgeText: null
+  },
+  {
+    id: 4,
+    name: "Coran Tajweed Doré",
+    category: "livres",
+    catLabel: "Livres & Dua",
+    desc: "Coran en arabe avec règles de tajwid colorées, couverture rigide dorée. Format poche.",
+    price: 19.90,
+    emoji: "📖",
+    badge: null,
+    badgeText: null
+  },
+  {
+    id: 5,
+    name: "Chapelet Bois de Santalum",
+    category: "chapelets",
+    catLabel: "Chapelets",
+    desc: "99 perles en bois de santal véritable, parfumées naturellement. Lien couleur or.",
+    price: 29.90,
+    emoji: "🌿",
+    badge: "promo",
+    badgeText: "Promo"
+  },
+  {
+    id: 6,
+    name: "Diffuseur Bakhour Laiton",
+    category: "encens",
+    catLabel: "Encens & Oud",
+    desc: "Mabkhara traditionnelle en laiton gravé à la main. Pièce artisanale unique.",
+    price: 34.00,
+    emoji: "🏺",
+    badge: "new",
+    badgeText: "Nouveau"
+  }
+];
+
+let cart = [];
+let selectedPayment = 'paypal';
+
+// ─── RENDU PRODUITS ───
+function renderProducts(filter = null) {
+  const grid = document.getElementById('productsGrid');
+  const filtered = filter ? PRODUCTS.filter(p => p.category === filter) : PRODUCTS;
+  grid.innerHTML = filtered.map(p => `
+    <div class="product-card">
+      <div class="product-img">
+        <div class="bg-pattern"></div>
+        ${p.badge ? `<div class="product-badge ${p.badge === 'new' ? 'new' : p.badge === 'promo' ? 'promo' : ''}">${p.badgeText}</div>` : ''}
+        <span style="position:relative;z-index:1;">${p.emoji}</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">${p.catLabel}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-footer">
+          <div>
+            <span class="product-price">${p.price.toFixed(2).replace('.', ',')} €</span>
+            ${p.badge === 'promo' ? `<span class="product-price-old">${(p.price * 1.2).toFixed(2).replace('.', ',')} €</span>` : ''}
+          </div>
+          <button class="btn-add" onclick="addToCart(${p.id})">+ Ajouter</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterCat(cat) {
+  renderProducts(cat);
+  document.getElementById('produits').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ─── PANIER ───
+function addToCart(id) {
+  const product = PRODUCTS.find(p => p.id === id);
+  const existing = cart.find(i => i.id === id);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ ...product, qty: 1 });
+  }
+  updateCartUI();
+  toggleCart(true);
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(i => i.id !== id);
+  updateCartUI();
+}
+
+function changeQty(id, delta) {
+  const item = cart.find(i => i.id === id);
+  if (item) {
+    item.qty += delta;
+    if (item.qty <= 0) removeFromCart(id);
+    else updateCartUI();
+  }
+}
+
+function updateCartUI() {
+  const count = cart.reduce((s, i) => s + i.qty, 0);
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  document.getElementById('cartCount').textContent = count;
+  document.getElementById('cartTotal').textContent = total.toFixed(2).replace('.', ',') + ' €';
+  const itemsEl = document.getElementById('cartItems');
+  if (cart.length === 0) {
+    itemsEl.innerHTML = '<div class="cart-empty"><div class="empty-icon">🛍</div><p>Votre panier est vide</p></div>';
+    return;
+  }
+  itemsEl.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <div class="cart-item-img">${item.emoji}</div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">${item.price.toFixed(2).replace('.', ',')} €</div>
+        <div class="cart-item-qty">
+          <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+        </div>
+      </div>
+      <button class="cart-item-remove" onclick="removeFromCart(${item.id})">✕</button>
+    </div>
+  `).join('');
+}
+
+function toggleCart(forceOpen) {
+  const overlay = document.getElementById('cartOverlay');
+  const drawer = document.getElementById('cartDrawer');
+  const isOpen = drawer.classList.contains('open');
+  if (forceOpen === true || !isOpen) {
+    overlay.classList.add('open');
+    drawer.classList.add('open');
+  } else {
+    overlay.classList.remove('open');
+    drawer.classList.remove('open');
+  }
+}
+
+// ─── COMMANDE ───
+function openOrder() {
+  if (cart.length === 0) return;
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  document.getElementById('orderSummaryItems').innerHTML = cart.map(i =>
+    `<div class="order-summary-item"><span>${i.name} × ${i.qty}</span><span>${(i.price * i.qty).toFixed(2).replace('.', ',')} €</span></div>`
+  ).join('');
+  document.getElementById('orderTotal').textContent = total.toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('modalOverlay').classList.add('open');
+  toggleCart(false);
+}
+
+function closeOrder() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.getElementById('orderForm').style.display = 'block';
+  document.getElementById('confirmScreen').classList.remove('show');
+}
+
+function selectPayment(el, method) {
+  document.querySelectorAll('.payment-option').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedPayment = method;
+}
+
+function submitOrder() {
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const address = document.getElementById('address').value.trim();
+  if (!firstName || !lastName || !email || !address) {
+    alert('Merci de remplir les champs obligatoires (prénom, nom, email, adresse).');
+    return;
+  }
+  const ref = 'MS-' + Date.now().toString().slice(-6);
+  document.getElementById('orderRef').textContent = 'Référence : ' + ref;
+  document.getElementById('orderForm').style.display = 'none';
+  document.getElementById('confirmScreen').classList.add('show');
+  cart = [];
+  updateCartUI();
+}
+
+// ─── INIT ───
+renderProducts();
+</script>
+</body>
+</html>
